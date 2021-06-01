@@ -278,7 +278,7 @@ class Discourse(Backend):
             if topic['last_posted_at'] is None:
                 logger.warning("Topic %s with last_posted_at null. Ignoring it.", topic['title'])
                 continue
-            updated_at = str_to_datetime(topic['last_posted_at'])
+            updated_at = str_to_datetime(topic['bumped_at'])
             pinned = topic['pinned']
             topics_ids.append((topic_id, updated_at, pinned))
 
